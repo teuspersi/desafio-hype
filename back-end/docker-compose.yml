@@ -1,0 +1,12 @@
+database:
+  image: mysql:5.7
+  volumes:
+    - data:/var/lib/mysql
+  restart: always
+  environment:
+    MYSQL_ROOT_PASSWORD: secret
+    MYSQL_DATABASE: desafiohype
+    MYSQL_USER: default
+    MYSQL_PASSWORD: secret
+  ports:
+    - "33061:3306"

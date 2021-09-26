@@ -1,0 +1,35 @@
+div .title {
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1f2327;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  h1 {
+    padding: 0 !important;
+    margin: 0;
+  }
+}
+
+div .form-div {
+  color: #fff !important;
+  background: #1f2327;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+  button {
+    box-shadow: inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2);
+    height: 40px;
+    display: flex;
+  }
+}
