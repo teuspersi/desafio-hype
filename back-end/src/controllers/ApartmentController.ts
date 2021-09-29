@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import ApartmentService from "../services/ApartmentService";
 
 class ApartmentController {
-  async create(request: Request, response: Response) {
+  async create(request: Request, response: Response): Promise<Response> {
     const { codigo, quartos, banheiros, suites, area_total, predio_id } =
       request.body;
     const apartment = await ApartmentService.create(
@@ -17,13 +17,16 @@ class ApartmentController {
     return response.status(201).json(apartment);
   }
 
-  async show(request: Request, response: Response) {
+  async show(request: Request, response: Response): Promise<Response> {
     const apartments = await ApartmentService.show();
 
     return response.json(apartments);
   }
 
-  async showByBuildingId(request: Request, response: Response) {
+  async showByBuildingId(
+    request: Request,
+    response: Response
+  ): Promise<Response> {
     const { id } = request.params;
 
     const apartments = await ApartmentService.showByBuildingId(id);
@@ -31,7 +34,7 @@ class ApartmentController {
     return response.json(apartments);
   }
 
-  async delete(request: Request, response: Response) {
+  async delete(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
     await ApartmentService.delete(id);
 

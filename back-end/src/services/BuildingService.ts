@@ -2,7 +2,7 @@ import { Apartment } from "../models/Apartment";
 import { Building } from "../models/Building";
 
 class BuildingService {
-  async create(nome, sigla, endereco, cidade, estado) {
+  async create(nome, sigla, endereco, cidade, estado): Promise<Building> {
     return Building.create({
       nome,
       sigla,
@@ -12,7 +12,7 @@ class BuildingService {
     });
   }
 
-  async show() {
+  async show(): Promise<Building[]> {
     return Building.findAll({
       include: [
         {
@@ -31,7 +31,7 @@ class BuildingService {
     });
   }
 
-  async showById(building_id) {
+  async showById(building_id): Promise<Building> {
     return Building.findByPk(building_id, {
       include: [
         {
@@ -50,7 +50,7 @@ class BuildingService {
     });
   }
 
-  async delete(building_id) {
+  async delete(building_id): Promise<void> {
     Building.destroy({ where: { id: building_id } });
   }
 }
